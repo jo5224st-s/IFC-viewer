@@ -19,7 +19,7 @@ content.append(WebIFCLoaderPlugin(variable_name="ifcLoader"))  # Creating WebIFC
 print("Choose IFC file(s) to visualize (separate with comma if multiple files):")
 path = input().split(",") # Creates a list of IFC files
 
-for i in range(len(path)):
+for i in range(len(path)): # Runs SceneModelLoading once for each file
     content.append(SceneModelLoading(path=path[i], variable_name = "sceneModel" +str(i+1), loader_variable_name="ifcLoader"))
 
 content.append(End())  # WebIFCLoaderPlugin needs this IFC API initiation to end
